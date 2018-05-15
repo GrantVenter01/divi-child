@@ -22,3 +22,12 @@ function my_enqueue_last() {
     wp_enqueue_style( 'responsive-style', get_stylesheet_directory_uri().'/responsive.css' );
 
 }
+
+function remove_footer_admin () {
+    // Adds a link to web ink site on WordPress admin panel
+    echo 'Developed by <a href="https://webinkdesign.co.za/" target="_blank">Web Ink</a></p>'; 
+} 
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+//removes welcome panel in WordPress
+remove_action('welcome_panel', 'wp_welcome_panel');
